@@ -9,7 +9,7 @@ public class readfile {
 
     public void openFile(){
         try {
-            x = new Scanner(new File("chinese.txt"));
+            x = new Scanner(new File("src/test/resources/chinese.txt"));
         } catch (Exception e){
             System.out.println("could not find file");
 
