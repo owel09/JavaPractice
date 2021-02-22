@@ -34,20 +34,18 @@ public class ReadingExcel {
             for (Cell cell : row){
                 switch (formulaEvaluator.evaluateInCell(cell).getCellType()){
                     //getting value of numeric
+                    //\t - insert tab ito between data
                     case NUMERIC:
-                        System.out.println(cell.getNumericCellValue()+ "\t\t");
+                        System.out.print(cell.getNumericCellValue()+ "\t\t");
                         break;
                     //getting value of string
                     case STRING:
-                        System.out.println(cell.getStringCellValue()+ "\t\t");
+                        System.out.print(cell.getStringCellValue()+ "\t\t");
                         break;
                 }
             }
             System.out.println();
 
         }
-
-
-
     }
 }
