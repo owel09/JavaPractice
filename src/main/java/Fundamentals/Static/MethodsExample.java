@@ -1,4 +1,4 @@
-package Fundamentals.Inheritance;
+package Fundamentals.Static;
 
 public class MethodsExample {
 
