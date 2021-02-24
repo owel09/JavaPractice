@@ -3,7 +3,8 @@ package Fundamentals.Constructor;
 public class Tuna {
     private String girlName;
 
-    //constructor
+    //CONSTRUCTOR - is method that makes a object
+    //CLASS - is blueprint of an object, only have variables and methods
     public Tuna(String girlName){
         this.girlName = girlName;
     }

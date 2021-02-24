@@ -25,7 +25,6 @@ public class Customer {
       Cannot resolve method println(java.lang.String,java.lang.String,java.lang.String)
        di basta gumagana yung println dito. kailangan naka-printf
      */
-      //TODO https://www.quora.com/Whats-the-difference-between-println-and-printf-in-Java
         System.out.printf("%s: %s\n",name,message);
     }
 }
