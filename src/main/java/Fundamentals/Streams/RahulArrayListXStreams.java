@@ -3,6 +3,8 @@ package Fundamentals.Streams;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 /*
@@ -92,5 +94,25 @@ public class RahulArrayListXStreams {
         System.out.println("-------");
         //printing only single result
         names.stream().filter(s->s.length()>4).limit(1).forEach(s-> System.out.println(s));
+    }
+
+    @Test
+    public void streamMap(){
+
+        //print all names with last letter "a" and capitalize
+        Stream.of("Abhijeet","Don","Alekhya","Adam","Rama").filter(s->s.endsWith("a")).map(s -> s.toUpperCase())
+                .forEach(s -> System.out.println(s));
+
+        System.out.println("------");
+
+        //print all names with first letter "a" and sorted
+        //converting Array to List para magamit yung streams
+        List<String> nameList = Arrays.asList("Abhijeet","Don","Alekhya","Adam","Rama");
+        nameList.stream().filter(s->s.startsWith("A")).sorted().map(s -> s.toUpperCase()).forEach(s-> System.out.println(s));
+
+        System.out.println("------");
+
+        Stream.of("Abhijeet","Don","Alekhya","Adam","Rama").filter(s->s.startsWith("A")).sorted().map(s->s.toUpperCase())
+                .forEach(s-> System.out.println(s));
     }
 }
