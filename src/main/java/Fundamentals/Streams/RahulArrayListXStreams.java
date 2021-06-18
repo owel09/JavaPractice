@@ -3,12 +3,14 @@ package Fundamentals.Streams;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 /*
  *Created by owel on 16/06/2021 10:26 AM
  * Comparison between for loop iteration and streams filter method
  * JUnit lang pang run ko. Walang main method
  * Count the number of names starting with A
+ * Print all the names in the ArrayList
  */
 public class RahulArrayListXStreams {
 
@@ -52,9 +54,43 @@ public class RahulArrayListXStreams {
         s - parameter scans all the list in the ArrayList
         .filter - intermediate operator
         .count - terminal operator
+
+        there is no life in intermediate operation if there is no terminal operation
+        terminal operation will execute only inter intermediate operation (filter) returns true
          */
 
         Long c = names.stream().filter(s -> s.startsWith("A")).count();
         System.out.println(c);
+
+        Long d = Stream.of("Adam","Asiong","Anton","Cardo").filter(s->s.startsWith("A")).count();
+        System.out.println(d);
+    }
+
+    @Test
+    public void printNames(){
+        ArrayList<String> names = new ArrayList<>();
+
+        names.add("Gojo");
+        names.add("Kusigaki");
+        names.add("Megumi");
+        names.add("Yuji");
+        names.add("Oy");
+        names.add("Ron");
+
+        //print all names
+        for(int i = 0; i < names.size(); i++){
+
+            String s = names.get(i);
+            System.out.println(s);
+        }
+
+        System.out.println("-------");
+
+        //filter and print names that is greater than 4
+        names.stream().filter(s->s.length()>4).forEach(s-> System.out.println(s));
+
+        System.out.println("-------");
+        //printing only single result
+        names.stream().filter(s->s.length()>4).limit(1).forEach(s-> System.out.println(s));
     }
 }
