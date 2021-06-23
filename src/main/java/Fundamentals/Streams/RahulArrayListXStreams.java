@@ -1,5 +1,6 @@
 package Fundamentals.Streams;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -115,4 +116,35 @@ public class RahulArrayListXStreams {
         Stream.of("Abhijeet","Don","Alekhya","Adam","Rama").filter(s->s.startsWith("A")).sorted().map(s->s.toUpperCase())
                 .forEach(s-> System.out.println(s));
     }
+
+    @Test
+    public void mergedStream(){
+
+        ArrayList <String> knights = new ArrayList<>();
+
+        knights.add("Asta");
+        knights.add("Yuno");
+        knights.add("Yami");
+
+        knights.stream().forEach(s-> System.out.println(s));
+
+        String[] ninja = {"Naruto","Sasuke","Sakura"};
+        List<String> ninjaList = Arrays.asList(ninja);
+        ninjaList.stream().forEach(s-> System.out.println(s));
+
+        System.out.println("------");
+
+        //merging 2 streams and print it sorted alphabetically
+        Stream.concat(knights.stream(),ninjaList.stream()).sorted().forEach(s -> System.out.println(s));
+
+        System.out.println("------");
+
+        //check if stream contains string "Naruto"
+        Stream<String> newStream = Stream.concat(knights.stream(),ninjaList.stream());
+        boolean flag = newStream.anyMatch(s -> s.equalsIgnoreCase("Naruto"));
+        System.out.println(flag);
+        Assert.assertTrue(flag);
+    }
+
+
 }
