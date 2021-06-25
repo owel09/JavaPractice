@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /*
@@ -145,6 +146,27 @@ public class RahulArrayListXStreams {
         System.out.println(flag);
         Assert.assertTrue(flag);
     }
+
+    @Test
+    //collect the result returned by the map method or the previous method
+    public void streamCollect(){
+        List <String> ls = Stream.of("Ichigo","Rukia","Renji").filter(s->s.startsWith("R")).sorted().map(s->s.toUpperCase())
+                .collect(Collectors.toList());
+        System.out.println(ls.get(0));
+
+
+    List<Integer> values = Arrays.asList(3,2,2,7,5,1,9,7);
+    //get the unique number in the array and sort
+    values.stream().distinct().sorted().forEach(s-> System.out.println(s));
+
+    System.out.println("------");
+
+    //get the 3rd index of the sorted list
+    List<Integer> sortedList = values.stream().distinct().sorted().collect(Collectors.toList());
+    System.out.println(sortedList.get(2));
+
+    }
+
 
 
 }
