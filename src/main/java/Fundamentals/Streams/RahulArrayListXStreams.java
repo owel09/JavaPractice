@@ -1,10 +1,12 @@
 package Fundamentals.Streams;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /*
@@ -115,4 +117,56 @@ public class RahulArrayListXStreams {
         Stream.of("Abhijeet","Don","Alekhya","Adam","Rama").filter(s->s.startsWith("A")).sorted().map(s->s.toUpperCase())
                 .forEach(s-> System.out.println(s));
     }
+
+    @Test
+    public void mergedStream(){
+
+        ArrayList <String> knights = new ArrayList<>();
+
+        knights.add("Asta");
+        knights.add("Yuno");
+        knights.add("Yami");
+
+        knights.stream().forEach(s-> System.out.println(s));
+
+        String[] ninja = {"Naruto","Sasuke","Sakura"};
+        List<String> ninjaList = Arrays.asList(ninja);
+        ninjaList.stream().forEach(s-> System.out.println(s));
+
+        System.out.println("------");
+
+        //merging 2 streams and print it sorted alphabetically
+        Stream.concat(knights.stream(),ninjaList.stream()).sorted().forEach(s -> System.out.println(s));
+
+        System.out.println("------");
+
+        //check if stream contains string "Naruto"
+        Stream<String> newStream = Stream.concat(knights.stream(),ninjaList.stream());
+        boolean flag = newStream.anyMatch(s -> s.equalsIgnoreCase("Naruto"));
+        System.out.println(flag);
+        Assert.assertTrue(flag);
+    }
+
+    @Test
+    //collect the result returned by the map method or the previous method
+    public void streamCollect(){
+        List <String> ls = Stream.of("Ichigo","Rukia","Renji").filter(s->s.startsWith("R")).sorted().map(s->s.toUpperCase())
+                .collect(Collectors.toList());
+        System.out.println(ls.get(0));
+
+
+    List<Integer> values = Arrays.asList(3,2,2,7,5,1,9,7);
+    //get the unique number in the array and sort
+    values.stream().distinct().sorted().forEach(s-> System.out.println(s));
+
+    System.out.println("------");
+
+    //get the 3rd index of the sorted list
+    List<Integer> sortedList = values.stream().distinct().sorted().collect(Collectors.toList());
+    System.out.println(sortedList.get(2));
+
+    }
+
+
+
 }
