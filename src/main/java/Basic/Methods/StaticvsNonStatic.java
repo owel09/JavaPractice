@@ -1,4 +1,4 @@
-package Fundamentals.Package0;
+package Basic.Methods;
 
 public class StaticvsNonStatic {
 

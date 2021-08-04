@@ -1,28 +1,32 @@
-package Fundamentals.Package0;
+package Basic.Variables;
 
 public class VariableTypes {
 
     static int staticVariable = 1;
         //this is independent, can use inside the class and doesn't need object
+        //bihira ko lang makita ito
 
     int instanceVariable = 2;
+        //INSTANCE VARIABLE - variable ito na nasa loob ng class
         //any method or constructor can access this variable
 
     void sampleMethod(){
         int localVariable = 3;
-        //you can't access localVariable outside this method
+        //LOCAL VARIABLE - variables declared inside the method
+        //you can't access localVariable outside this method kaya gumamit pa ako ng
+        //obj sa sa main method para matawag
 
         System.out.println(localVariable);
     }
 
     public static void main(String[] args) {
-        VariableTypes obj = new VariableTypes();
-
+        
         System.out.println(VariableTypes.staticVariable);
-        //you can call static variable directly without obj
+        //STATIC VARIABLE can call  directly without obj
 
+        VariableTypes obj = new VariableTypes();
         System.out.println(obj.instanceVariable);
-        //instance variables requires obj to call
+        //INSTANCE VARIABLES requires obj to call
 
         obj.sampleMethod();
         //calling sampleMethod to print localVariable value
