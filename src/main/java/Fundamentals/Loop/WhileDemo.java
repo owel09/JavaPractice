@@ -19,5 +19,15 @@ public class WhileDemo {
             System.out.println(x);
             x--;
         }
+
+        System.out.println("--------------------");
+
+        //do while loop 1 guarantee loop execution
+        int y = 20;
+        do {
+            System.out.println(y);
+            y++;
+        }while(y<30);
+
     }
 }

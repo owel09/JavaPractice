@@ -35,22 +35,19 @@ public class ForEachArray2Dimen {
 
         System.out.println("-----------------------");
 
-        for (int b[] : twoDimArr
-                /*
+        /*
                 kapag gumagamit ng twoDimArr sa for each, dapat naka declare as array yung variable b[]
                 kasi yung first element ng twoDimArr is naka-array {1,2,3,4}
                 yung b is not a normal int variable dapat naka-array siya
                  */
-             ) {
+        for (int b[] : twoDimArr) {
 
-            for (int c: b
-                    /*
-                    itong loop na ito yung magttravel sa b[] na siyang first elemet ng twoDimArr[]
-                     */
-                 ) {
+            /*
+            itong loop na ito yung magttravel sa b[] na siyang first elemet ng twoDimArr[]
+            */
+            for (int c: b) {
 
                 System.out.print(" "+c);
-
             }
 
             System.out.println(" ");
