@@ -1,4 +1,4 @@
-package Fundamentals.Interface;
+package Fundamentals.Interface1;
 
 public class MammalInt implements Animals {
     @Override

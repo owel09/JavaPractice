@@ -1,4 +1,4 @@
-package Fundamentals.Interface;
+package Fundamentals.Interface3;
 
 /*Pass interface as parameter with anonymous inner class
  *Created by owel on 29/02/2020 7:59 AM

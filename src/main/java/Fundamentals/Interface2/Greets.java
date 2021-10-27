@@ -1,4 +1,4 @@
-package Fundamentals.Interface;
+package Fundamentals.Interface2;
 
 public interface Greets
 {

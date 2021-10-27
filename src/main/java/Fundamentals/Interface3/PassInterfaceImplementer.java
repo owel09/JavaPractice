@@ -1,4 +1,4 @@
-package Fundamentals.Interface;
+package Fundamentals.Interface3;
 
 /*
  *Created by owel on 29/02/2020 8:24 AM
