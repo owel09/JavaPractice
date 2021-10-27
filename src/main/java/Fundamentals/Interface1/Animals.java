@@ -6,6 +6,8 @@ public interface Animals {
 
     public void travel();
 
+    public void sleep();
+
     default void walk(){
         System.out.println("default method");
     }
