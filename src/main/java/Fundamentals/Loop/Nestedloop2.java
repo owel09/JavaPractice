@@ -29,6 +29,22 @@ public class Nestedloop2 {
             System.out.println("");
         }
 
+        System.out.println("-----------------------");
+
+        int f = 1;
+        for(int d = 1 ; d <= 4 ; d++){
+            for (int e = 1 ; e <= d ; e++){
+                System.out.print(" "+(f*3));
+                f++;
+            }
+            System.out.println("");
+        }
+
+        System.out.println("-----------------------");
+
+
+
+
 
     }
 }
