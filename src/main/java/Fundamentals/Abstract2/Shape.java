@@ -1,4 +1,4 @@
-package Fundamentals.Abstract;
+package Fundamentals.Abstract2;
 
 abstract class Shape {
     private double width;

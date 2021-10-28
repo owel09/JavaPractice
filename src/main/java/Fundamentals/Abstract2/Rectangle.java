@@ -1,4 +1,4 @@
-package Fundamentals.Abstract;
+package Fundamentals.Abstract2;
 
 class Rectangle extends Shape {
 

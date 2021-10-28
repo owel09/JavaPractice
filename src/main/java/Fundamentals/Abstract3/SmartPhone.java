@@ -1,4 +1,4 @@
-package Fundamentals.Abstract;
+package Fundamentals.Abstract3;
 
 abstract class SmartPhone {
 
